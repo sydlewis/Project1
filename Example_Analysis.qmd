@@ -226,6 +226,7 @@ Please note that the age categories are not of equal size. These are the same ag
 :::
 
 ```{r, warning = FALSE}
+# loading a package for other color options
 library(paletteer)
 
 substance_ever <- nsduh_2021_v1 %>%
