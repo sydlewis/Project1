@@ -245,9 +245,9 @@ ggplot(substance_ever, aes(x = age, y = Percentage, color = Substance, group = S
   geom_point(size = 2.5) +
   geom_path(linetype = 2) +
   labs(title = "Percentage of Respondents Who Have Ever Tried Substance",
-       subtitle = "This visualization is color coded by substance and compared across age group. In the NSDUH, age \nis recorded as a categorical variables using a set of age groups, which vary in the amount of \nyears included. The age group interval lengths are narrower in adolescence as compared to younger \nand older years.",
-       x = "Age Group",
-       y = "Percentage of Respondents",
+       subtitle = "This visualization is color coded by substance and compared across age group. In the NSDUH, \nage is recorded as a categorical variables using a set of age groups, which vary in the amount of \nyears included. The age group interval lengths are narrower in adolescence as compared to \nyounger and older years.",
+       x = "Age Group (years)",
+       y = "Percentage of Respondents (%)",
        caption = "Source: NSDUH 2021") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))  +
@@ -274,7 +274,7 @@ This analysis uses the same survey questions as the previous section, though the
 ::: {.callout-note appearance="simple"}
 ## Visualization Note
 
-Please note that the scales on the y-axis are not identical across the faceted plots for the next two visualizations. Because of the wide variation in prevalence of use for these different substances, I chose to adjust the y-axis' scale in order to clarify the use differences across sex.
+Please note that the scales on the y-axis are not identical across the faceted plots for the next two visualizations. Because some substances are used much more widely than other substances, I chose to adjust the y-axis' scale in order to highlight the use differences across sex.
 :::
 
 ```{r, warning = FALSE}
@@ -305,8 +305,8 @@ ggplot(substance_ever_sex, aes(x = age, y = Percentage, color = sex, group = sex
   geom_path() +
   labs(title = "Percentage of Respondents Who Have Ever Tried Substance",
        subtitle = "This visualization is faceted by substance and color coded by sex. The y-axis scales are not \nidentical and are fit to reflect the scale most appropriate for that specific substance.",
-       x = "Age Group",
-       y = "Percentage of Respondents",
+       x = "Age Group (years)",
+       y = "Percentage of Respondents (%)",
        color = "Sex:",
        caption = "Source: NSDUH 2021") +
   theme_minimal() +
@@ -318,9 +318,9 @@ theme(legend.position = "top")
 
 ## Recent Substance Use Across Age and Sex
 
-**How does recent drug use vary across age and sex?**
+**How does *recent* drug use vary across age and sex?**
 
-In this section, I used survey data about more recent substance use. I chose to define "recent use" as happening in the last 12 months across all substances. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants.
+In this section, I used survey data about more recent substance use, as compared to any lifetime use. I chose to define "recent use" as happening in the last 12 months across all substances. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants.
 
 ```{r, warning = FALSE, message=FALSE}
 proportion_lastyear <- nsduh_2021_v1 %>%
@@ -348,8 +348,8 @@ ggplot(proportion_lastyear, aes(x = age, y = Percentage, fill = sex, group = sex
   labs(
     title = "Percentage of Respondents with Recent Substance Use",
     subtitle = "Recent substance use is defined as within the last 12 months. This visualization is faceted by \nsubstance and color coded by sex. The y-axis scales are not identical and are fit to reflect the \nscale most appropriate for that specific substance.",
-    x = "Age Group",
-    y = "Percentage of Respondents",
+    x = "Age Group (years)",
+    y = "Percentage of Respondents (%)",
     fill = "Sex:",
     caption = "Source: NSDUH 2021") +
   theme_minimal() +
@@ -420,8 +420,8 @@ ggplot(proportion_data, aes(x = Try_Age_Group, y = factor(Substance, levels = me
     title = "Age When Respondent First Used Substance",
     subtitle = "Substances are organized by median age of substance use initiation, with greater \nmedian age at the top of the plot. The percentage on each tile reflects the percentage \nof respondents who have ever used that substance and first used it during that age \nrange.",
     x = "Age of Substance Use Initiation (years)",
-    y = "",
-    fill = "Percentage \nof Respondents",
+    y = "Substance",
+    fill = "Percentage \nof Respondents (%)",
     caption = "Source: NSDUH 2021"
   ) + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
@@ -430,7 +430,7 @@ ggplot(proportion_data, aes(x = Try_Age_Group, y = factor(Substance, levels = me
 
 # Summary
 
-As represented in the NSDUH survey data, substance use varies widely across age and sex. There are gender and age gaps in the number of respondents who have ever used and recently used these substances. These trends are amplified in specific substances. In general, respondents were most likely to have first tried a substance in their later teenage years. One possible limitation of this analysis is the use of survey data, which relies on self-reported substance use. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about statistical analyses and epidemiology so that I will become better equipped to continue exploring these questions and investigating these topics.
+As represented in the NSDUH survey data, substance use varies widely across age and sex. There are gender and age gaps in the number of respondents who have ever used and recently used these substances. Some of these trends are unique to specific substances. In general, respondents were most likely to have first tried a substance in their later teenage years. One possible limitation of this analysis is the use of survey data, which relies on self-reported substance use. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about epidemiology and statistical analyses so that I will become better equipped to continue exploring these research questions.
 
 ### Functions used
 

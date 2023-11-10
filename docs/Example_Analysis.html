@@ -442,9 +442,9 @@ Visualization Note
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percentage of Respondents Who Have Ever Tried Substance"</span>,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This visualization is color coded by substance and compared across age group. In the NSDUH, age </span><span class="sc">\n</span><span class="st">is recorded as a categorical variables using a set of age groups, which vary in the amount of </span><span class="sc">\n</span><span class="st">years included. The age group interval lengths are narrower in adolescence as compared to younger </span><span class="sc">\n</span><span class="st">and older years."</span>,</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage of Respondents"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This visualization is color coded by substance and compared across age group. In the NSDUH, </span><span class="sc">\n</span><span class="st">age is recorded as a categorical variables using a set of age groups, which vary in the amount of </span><span class="sc">\n</span><span class="st">years included. The age group interval lengths are narrower in adolescence as compared to </span><span class="sc">\n</span><span class="st">younger and older years."</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group (years)"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage of Respondents (%)"</span>,</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span>) <span class="sc">+</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))  <span class="sc">+</span></span>
@@ -480,7 +480,7 @@ Visualization Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Please note that the scales on the y-axis are not identical across the faceted plots for the next two visualizations. Because of the wide variation in prevalence of use for these different substances, I chose to adjust the y-axis’ scale in order to clarify the use differences across sex.</p>
+<p>Please note that the scales on the y-axis are not identical across the faceted plots for the next two visualizations. Because some substances are used much more widely than other substances, I chose to adjust the y-axis’ scale in order to highlight the use differences across sex.</p>
 </div>
 </div>
 <div class="cell">
@@ -513,8 +513,8 @@ Visualization Note
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>() <span class="sc">+</span></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percentage of Respondents Who Have Ever Tried Substance"</span>,</span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This visualization is faceted by substance and color coded by sex. The y-axis scales are not </span><span class="sc">\n</span><span class="st">identical and are fit to reflect the scale most appropriate for that specific substance."</span>,</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage of Respondents"</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group (years)"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage of Respondents (%)"</span>,</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Sex:"</span>,</span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span>) <span class="sc">+</span></span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -530,8 +530,8 @@ Visualization Note
 </section>
 <section id="recent-substance-use-across-age-and-sex" class="level2">
 <h2 class="anchored" data-anchor-id="recent-substance-use-across-age-and-sex">Recent Substance Use Across Age and Sex</h2>
-<p><strong>How does recent drug use vary across age and sex?</strong></p>
-<p>In this section, I used survey data about more recent substance use. I chose to define “recent use” as happening in the last 12 months across all substances. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants.</p>
+<p><strong>How does <em>recent</em> drug use vary across age and sex?</strong></p>
+<p>In this section, I used survey data about more recent substance use, as compared to any lifetime use. I chose to define “recent use” as happening in the last 12 months across all substances. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -560,8 +560,8 @@ Visualization Note
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Percentage of Respondents with Recent Substance Use"</span>,</span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Recent substance use is defined as within the last 12 months. This visualization is faceted by </span><span class="sc">\n</span><span class="st">substance and color coded by sex. The y-axis scales are not identical and are fit to reflect the </span><span class="sc">\n</span><span class="st">scale most appropriate for that specific substance."</span>,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Respondents"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group (years)"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Respondents (%)"</span>,</span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Sex:"</span>,</span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span>) <span class="sc">+</span></span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
@@ -636,8 +636,8 @@ Visualization Note
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Age When Respondent First Used Substance"</span>,</span>
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Substances are organized by median age of substance use initiation, with greater </span><span class="sc">\n</span><span class="st">median age at the top of the plot. The percentage on each tile reflects the percentage </span><span class="sc">\n</span><span class="st">of respondents who have ever used that substance and first used it during that age </span><span class="sc">\n</span><span class="st">range."</span>,</span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age of Substance Use Initiation (years)"</span>,</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Percentage </span><span class="sc">\n</span><span class="st">of Respondents"</span>,</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Substance"</span>,</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Percentage </span><span class="sc">\n</span><span class="st">of Respondents (%)"</span>,</span>
 <span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span></span>
 <span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
@@ -651,7 +651,7 @@ Visualization Note
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
-<p>As represented in the NSDUH survey data, substance use varies widely across age and sex. There are gender and age gaps in the number of respondents who have ever used and recently used these substances. These trends are amplified in specific substances. In general, respondents were most likely to have first tried a substance in their later teenage years. One possible limitation of this analysis is the use of survey data, which relies on self-reported substance use. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about statistical analyses and epidemiology so that I will become better equipped to continue exploring these questions and investigating these topics.</p>
+<p>As represented in the NSDUH survey data, substance use varies widely across age and sex. There are gender and age gaps in the number of respondents who have ever used and recently used these substances. Some of these trends are unique to specific substances. In general, respondents were most likely to have first tried a substance in their later teenage years. One possible limitation of this analysis is the use of survey data, which relies on self-reported substance use. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about epidemiology and statistical analyses so that I will become better equipped to continue exploring these research questions.</p>
 <section id="functions-used" class="level3">
 <h3 class="anchored" data-anchor-id="functions-used">Functions used</h3>
 <p><strong>dyplr:</strong> filter, select, summarise, mutate, group_by, ungroup, arrange</p>
