@@ -10,9 +10,9 @@ csl: nature.csl
 
 **How does recreational substance use vary across age and sex?**
 
-A person's relationship with substance use is dynamic and may change throughout their life. With this in mind, researchers are often interested in exploring how different groups of people use recreational drugs. Recently, there have been increased concerns about the interaction of substance use and mental health issues for youth[@panchal_recent_2022]. Other reports have described increased binge drinking and marijuana use among middle aged adults[@richtel_middle-aged_2023] and substance use disorders among older adults[@span_substance_2023]. While men are more likely to use substances than women[@noauthor_sex_nodate], stigmatization contributes to women being less likely to connect with substance use treatment resources[@krug_women_2023]. Overall, understanding how different groups of people interact with substances helps medical and public health professionals support these impacted groups.
+A person's relationship with substance use is dynamic and may change throughout their life. Researchers are often interested in exploring how different groups of people use recreational drugs. Recently, there have been increased concerns about the interaction of substance use and mental health issues for youth[@panchal_recent_2022]. Other reports have described increased binge drinking and marijuana use among middle aged adults[@richtel_middle-aged_2023] and substance use disorders among older adults[@span_substance_2023]. While men are more likely to use substances than women[@noauthor_sex_nodate], stigmatization contributes to women being less likely to connect with substance use treatment resources[@krug_women_2023]. Overall, understanding how different groups of people interact with recreational drugs helps medical and public health professionals better support these impacted groups.
 
-In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. This analysis is intended for anyone interested in public health and trends related to these topics.
+In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. This analysis is intended for anyone interested in public health and trends related to these important topics.
 
 # Data Source
 
@@ -30,13 +30,13 @@ In this analysis, I am interested in further exploring how substance use varies 
 -   Strengthening the Behavioral Health Workforce
 :::
 
-I used data from the 2021 [National Survey of Drug Use and Health](https://nsduhweb.rti.org/respweb/homepage.cfm). The NSDUH has been conducted by the U.S. government since 1971. This survey explores questions related to substance use, mental health, and other health concerns. I used [this link](https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001) to download the dataset and the codebook can be found [here](https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf).
+I used data from the 2021 [National Survey of Drug Use and Health](https://nsduhweb.rti.org/respweb/homepage.cfm) (NSDUH). The NSDUH has been conducted by the U.S. government since 1971. This survey explores questions related to substance use, mental health, and other health concerns. I downloaded the data via [this link](https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001). The associated codebook can be found [here](https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf).
 
 # Data Wrangling
 
-Throughout this analysis, I use data collected about substance use related to cigarettes, cigars, alcohol, marijuana, cocaine, heroin, hallucinogens, inhalants, methamphetamine, and inhalants. While I focused on recreational drugs, the NSDUH explores different types of substances, including prescription medications, as well as specific substances within a class of drugs, such as LSD. 
+Throughout this analysis, I used data collected about consumption of cigarettes, cigars, alcohol, marijuana, cocaine, heroin, hallucinogens, inhalants, methamphetamine, and inhalants. While I focused on these recreational drugs in this analysis, the NSDUH explores different types of substances, including prescription medications, as well as specific substances within a class of drugs, such as LSD.
 
-I primarily used tidyverse functions to clean and transform my data. I have added comments to the included code to further highlight the different steps I took. 
+I primarily used tidyverse functions to clean and transform my data. I have added comments to the included code to describe my steps.
 
 ```{r, output = FALSE, warning = FALSE}
 # download the haven package to use the stata file
@@ -219,12 +219,12 @@ nsduh_2021_v1 <- nsduh_2021_raw %>%
 
 **How does any lifetime drug use vary across age?**
 
-I used survey data asking respondents whether they had ever used a substance in their life. As we may expect, fewer people have tried substances traditionally thought of as "harder drugs," like heroin and meth, than legal substances, like alcohol and cigarettes. In older age groups, there is a wider gaps in exposure across the different substances. Perhaps in younger age groups, especially when none of these substances are legal, the respondents who are using substances are less discriminatory about which substance they do use. 
+I used survey data asking respondents whether they had ever used a substance in their life. Fewer people have tried substances traditionally thought of as "harder drugs," like heroin and meth, than legal substances, like alcohol and cigarettes. In older age groups, there are wider gaps in exposure across the different substances. In addition, there are trends related to certain substances being more popular among certain age groups. Inhalants are more popular relative to other substances in younger age groups. In the 30 to 34 age group and those younger, marijuana is more likely to have been tried than cigarettes, but this trend is reversed in older age groups.
 
 ::: {.callout-note appearance="simple"}
 ## Visualization Note
 
-Please note that the age categories are not of equal size. These are the same age categories used in the NSDUH survey. The dashed lines connecting the points are meant to help guide the reader to see trends across these age groups, but not imply continuous age data
+Please note that these age categories are not of equal size. These are the same age categories used in the NSDUH survey. The dashed lines connecting the points are meant to help illustrate trends across these age groups, but not to imply continuous age data.
 :::
 
 ```{r, warning = FALSE}
@@ -245,7 +245,7 @@ ggplot(substance_ever, aes(x = age, y = Percentage, color = Substance, group = S
   geom_point(size = 2.5) +
   geom_path(linetype = 2) +
   labs(title = "Percentage of Respondents Who Have Ever Tried Substance",
-       subtitle = "This visualization is colored by substance and compared across age group. In the NSDUH, age \nis recorded as a categorical variables using a set of age groups, which vary in the amount of \nyears. The age group interval lengths are narrower in adolescence as compared to younger and \nolder years.",
+       subtitle = "This visualization is colored coded by substance and compared across age group. In the NSDUH, age \nis recorded as a categorical variables using a set of age groups, which vary in the amount of \nyears included. The age group interval lengths are narrower in adolescence as compared to younger \nand older years.",
        x = "Age Group",
        y = "Percentage of Respondents",
        caption = "Source: NSDUH 2021") +
@@ -267,14 +267,14 @@ ggplot(substance_ever, aes(x = age, y = Percentage, color = Substance, group = S
 
 ## Substances Ever Used across Sex
 
-**How does any lifetime drug use vary across sex and age?**
+**How does any lifetime drug use vary across age *and sex*?**
 
-This analysis uses the same survey data as the previous section, though the responses are grouped by sex, which was recorded as a binary variable in the survey data. In most cases, the percentage of male participants who have experimented with these substances in greater than the percentage of female participants. The difference in these percentages appears to be larger in older age groups. 
+This analysis uses the same survey questions as the previous section, though the responses are grouped by sex, which was recorded as a binary variable in the survey data. In most cases, the percentage of male participants who have experimented with these substances in greater than the percentage of female participants. This gender gap in lifetime substance use experience appears to be larger in older age groups.
 
 ::: {.callout-note appearance="simple"}
 ## Visualization Note
 
-Please note that the scales on the y-axis are not identical across the faceted plots for the next two visualizations. Because of the wide variation in prevalance of use for these different substances, I chose to adjust the y-axis' scale in order to clarify the use differences across sex.
+Please note that the scales on the y-axis are not identical across the faceted plots for the next two visualizations. Because of the wide variation in prevalence of use for these different substances, I chose to adjust the y-axis' scale in order to clarify the use differences across sex.
 :::
 
 ```{r, warning = FALSE}
@@ -320,7 +320,7 @@ theme(legend.position = "top")
 
 **How does recent drug use vary across age and sex?**
 
-In this section, I used survey data about how recent the respondent has used a substance. While there were often more categories available, depending on the substance, I chose to define "recent use" as happening in the last 12 months and coded the responses to reflect a binary variable. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants. 
+In this section, I used survey data about more recent substance use. I chose to define "recent use" as happening in the last 12 months across all substances. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants.
 
 ```{r, warning = FALSE, message=FALSE}
 proportion_lastyear <- nsduh_2021_v1 %>%
@@ -363,7 +363,7 @@ theme(legend.position = "top")
 
 **When are people most likely to try a drug for the first time?**
 
-To explore this question, I used survey data asking respondents about the age of their first use of a substance. While this data was numeric with integers for age, I chose to create age group categories instead. For nearly all of the substances, the age group 15-19 is the most common time when people use for the first time. In general, substances generally considered "harder drugs" are initiated at older ages than drugs that are legal for adults. 
+To explore this question, I used survey data asking respondents about the age of their first use of a substance. While this data was numeric with integers for age, I chose to instead create age group categories. For nearly all of the substances, the age group 15-19 is the most common time when people use a drug for the first time. In general, substances generally considered "harder drugs" are initiated at older ages than drugs that do not have this same connotation.
 
 ```{r, warning = FALSE}
 median_Substance_order <- nsduh_2021_v1 %>%
@@ -417,8 +417,8 @@ ggplot(proportion_data, aes(x = Try_Age_Group, y = factor(Substance, levels = me
   scale_fill_gradient(low = "lightblue", high = "darkblue") +
   theme_minimal() +
   labs(
-    title = "Age When Respondents First Used Substance",
-    subtitle = "Substances are organized by median age of substance use initiation, \nwith greater median age at the top of the plot. Respondents are included \nif they have ever used the substance.",
+    title = "Age When Respondent First Used Substance",
+    subtitle = "Substances are organized by median age of substance use initiation, with greater \nmedian age at the top of the plot. The percentage on each tile reflects the percentage \nof respondents who have ever used that substance and first used it during that age \nrange.",
     x = "Age of Substance Use Initiation (years)",
     y = "",
     fill = "Percentage \nof Respondents",
@@ -430,7 +430,7 @@ ggplot(proportion_data, aes(x = Try_Age_Group, y = factor(Substance, levels = me
 
 # Summary
 
-Substance use varies widely across age and sex. Across the NSDUH age groups, substance use experience varies widely. The types of drugs that respondents have ever used varies across age groups. In addition, there is a gender gap in the number of respondents who have ever used these substances. The number of people who have used a substance in the last 12 months also varies across age group and sex. In general, respondents were most likely to have first tried a substance in their later teenage years. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about statistical analyses and epidemiology so that I will become better equipped to continue exploring these questions and investigating these topics.   
+As represented in the NSDUH survey data, substance use varies widely across age and sex. There are gender and age gaps in the number of respondents who have ever used and recently used these substances. These trends are amplified in specific substances. In general, respondents were most likely to have first tried a substance in their later teenage years. One possible limitation of this analysis is the use of survey data, which relies on self-reported substance use. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about statistical analyses and epidemiology so that I will become better equipped to continue exploring these questions and investigating these topics.
 
 ### Functions used
 
@@ -439,7 +439,6 @@ Substance use varies widely across age and sex. Across the NSDUH age groups, sub
 **tidyr:** pivot_longer
 
 **ggplot2:** geom_point, geom_path, geom_bar, geom_tile
-
 
 ### References
 
