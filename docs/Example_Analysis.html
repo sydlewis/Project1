@@ -204,14 +204,14 @@ div.csl-indent {
 <section id="research-question" class="level1">
 <h1>Research Question</h1>
 <p><strong>How does recreational substance use vary across age and sex?</strong></p>
-<p>A person’s relationship with substance use is dynamic and may change throughout their life. Researchers are often interested in exploring how different groups of people use recreational drugs. Recently, there have been increased concerns about the interaction of substance use and mental health issues for youth<span class="citation" data-cites="panchal_recent_2022"><sup><a href="#ref-panchal_recent_2022" role="doc-biblioref">1</a></sup></span>. Other reports have described increased binge drinking and marijuana use among middle aged adults<span class="citation" data-cites="richtel_middle-aged_2023"><sup><a href="#ref-richtel_middle-aged_2023" role="doc-biblioref">2</a></sup></span> and substance use disorders among older adults<span class="citation" data-cites="span_substance_2023"><sup><a href="#ref-span_substance_2023" role="doc-biblioref">3</a></sup></span>. While men are more likely to use substances than women<span class="citation" data-cites="noauthor_sex_nodate"><sup><a href="#ref-noauthor_sex_nodate" role="doc-biblioref">4</a></sup></span>, stigmatization contributes to women being less likely to connect with substance use treatment resources<span class="citation" data-cites="krug_women_2023"><sup><a href="#ref-krug_women_2023" role="doc-biblioref">5</a></sup></span>. Overall, understanding how different groups of people interact with recreational drugs helps medical and public health professionals better support these impacted groups.</p>
+<p>A person’s relationship with substance use is dynamic and may change throughout their life. Researchers are often interested in exploring how different groups of people use recreational drugs. Recently, there have been increased concerns about the interaction of substance use and mental health issues for youth<span class="citation" data-cites="panchal_recent_2022"><sup><a href="#ref-panchal_recent_2022" role="doc-biblioref">1</a></sup></span>. Other reports have described increased binge drinking and marijuana use among middle aged adults<span class="citation" data-cites="richtel_middle-aged_2023"><sup><a href="#ref-richtel_middle-aged_2023" role="doc-biblioref">2</a></sup></span> and substance use disorders among older adults<span class="citation" data-cites="span_substance_2023"><sup><a href="#ref-span_substance_2023" role="doc-biblioref">3</a></sup></span>. While men are more likely to use substances than women<span class="citation" data-cites="noauthor_sex_nodate"><sup><a href="#ref-noauthor_sex_nodate" role="doc-biblioref"><strong>noauthor_sex_nodate?</strong></a></sup></span>, stigmatization contributes to women being less likely to connect with substance use treatment resources<span class="citation" data-cites="krug_women_2023"><sup><a href="#ref-krug_women_2023" role="doc-biblioref">4</a></sup></span>. Overall, understanding how different groups of people interact with recreational drugs helps medical and public health professionals better support these impacted groups.</p>
 <p>In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. This analysis is intended for anyone interested in public health and trends related to these important topics.</p>
 </section>
 <section id="data-source" class="level1 page-columns page-full">
 <h1>Data Source</h1>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><img src="hhs-samhsa.jpg" class="img-fluid"> The Substance Abuse and Mental Health Services Administration (SAMHSA) administers the NSDUH. The agency focuses on behavioral health and was established by congress in 1992. As noted in the SAMHSA’s Strategic Plan<span class="citation" data-cites="noauthor_samhsas_2023"><sup><a href="#ref-noauthor_samhsas_2023" role="doc-biblioref">6</a></sup></span>, the agency’s top five priorities are:</p>
+<p><img src="hhs-samhsa.jpg" class="img-fluid"> The Substance Abuse and Mental Health Services Administration (SAMHSA) administers the NSDUH. The agency focuses on behavioral health and was established by congress in 1992. As noted in the SAMHSA’s Strategic Plan<span class="citation" data-cites="noauthor_samhsas_2023"><sup><a href="#ref-noauthor_samhsas_2023" role="doc-biblioref">5</a></sup></span>, the agency’s top five priorities are:</p>
 <ul>
 <li><p>Preventing Overdose</p></li>
 <li><p>Enhancing Access to Suicide Prevention and Crisis Care</p></li>
@@ -415,7 +415,7 @@ div.csl-indent {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Visualization Note
+Note about Age Groups
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -470,13 +470,13 @@ Visualization Note
 <h2 class="anchored" data-anchor-id="substances-ever-used-across-sex">Substances Ever Used across Sex</h2>
 <p><strong>How does any lifetime drug use vary across age <em>and sex</em>?</strong></p>
 <p>This analysis uses the same survey questions as the previous section, though the responses are grouped by sex, which was recorded as a binary variable in the survey data. In most cases, the percentage of male participants who have experimented with these substances in greater than the percentage of female participants. This gender gap in lifetime substance use experience appears to be larger in older age groups.</p>
-<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Visualization Note
+Warning about Y-axis Scaling
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -654,9 +654,9 @@ Visualization Note
 <p>As represented in the NSDUH survey data, substance use varies widely across age and sex. There are gender and age gaps in the number of respondents who have ever used and recently used these substances. Some of these trends are unique to specific substances. In general, respondents were most likely to have first tried a substance in their later teenage years. One possible limitation of this analysis is the use of survey data, which relies on self-reported substance use. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about epidemiology and statistical analyses so that I will become better equipped to continue exploring these research questions.</p>
 <section id="functions-used" class="level3">
 <h3 class="anchored" data-anchor-id="functions-used">Functions used</h3>
-<p><strong>dyplr:</strong> filter, select, summarise, mutate, group_by, ungroup, arrange</p>
-<p><strong>tidyr:</strong> pivot_longer</p>
-<p><strong>ggplot2:</strong> geom_point, geom_path, geom_bar, geom_tile</p>
+<p><strong>dyplr:</strong> <code>filter</code>, <code>select</code>, <code>summarise</code>, <code>mutate</code>, <code>group_by</code>, <code>ungroup</code>, <code>arrange</code></p>
+<p><strong>tidyr:</strong> <code>pivot_longer</code></p>
+<p><strong>ggplot2:</strong> <code>geom_point</code>, <code>geom_path</code>, <code>geom_bar</code>, <code>geom_tile</code></p>
 </section>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
@@ -670,14 +670,11 @@ Visualization Note
 <div id="ref-span_substance_2023" class="csl-entry" role="listitem">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">Span, P. <a href="https://www.nytimes.com/2023/07/09/health/seniors-substance-abuse.html">Substance <span>Abuse</span> <span>Is</span> <span>Climbing</span> <span>Among</span> <span>Seniors</span> - <span>The</span> <span>New</span> <span>York</span> <span>Times</span></a>. <em>New York Times</em> (2023).</div>
 </div>
-<div id="ref-noauthor_sex_nodate" class="csl-entry" role="listitem">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline"><a href="https://nida.nih.gov/publications/research-reports/substance-use-in-women/sex-gender-differences-in-substance-use">Sex and <span>Gender</span> <span>Differences</span> in <span>Substance</span> <span>Use</span> <span></span> <span>National</span> <span>Institute</span> on <span>Drug</span> <span>Abuse</span> (<span>NIDA</span>)</a>. <em>National Institute on Drug Abuse</em>.</div>
-</div>
 <div id="ref-krug_women_2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">5. </div><div class="csl-right-inline">Krug, M. <em>Women less likely to seek substance use treatment due to stigma, logistics <span></span> <span>Penn</span> <span>State</span> <span>University</span></em>. <a href="https://www.psu.edu/news/social-science-research-institute/story/women-less-likely-seek-substance-use-treatment-due-stigma/">https://www.psu.edu/news/social-science-research-institute/story/women-less-likely-seek-substance-use-treatment-due-stigma/</a> (2023).</div>
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Krug, M. <em>Women less likely to seek substance use treatment due to stigma, logistics <span></span> <span>Penn</span> <span>State</span> <span>University</span></em>. <a href="https://www.psu.edu/news/social-science-research-institute/story/women-less-likely-seek-substance-use-treatment-due-stigma/">https://www.psu.edu/news/social-science-research-institute/story/women-less-likely-seek-substance-use-treatment-due-stigma/</a> (2023).</div>
 </div>
 <div id="ref-noauthor_samhsas_2023" class="csl-entry" role="listitem">
-<div class="csl-left-margin">6. </div><div class="csl-right-inline"><a href="https://www.samhsa.gov/about-us/strategic-plan"><span>SAMHSA</span>’s 2023-2026 <span>Strategic</span> <span>Plan</span></a>. (2023).</div>
+<div class="csl-left-margin">5. </div><div class="csl-right-inline"><a href="https://www.samhsa.gov/about-us/strategic-plan"><span>SAMHSA</span>’s 2023-2026 <span>Strategic</span> <span>Plan</span></a>. <em>Substance Abuse and Mental Health Services Administration</em> (2023).</div>
 </div>
 </div>
 

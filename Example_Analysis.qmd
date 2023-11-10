@@ -222,7 +222,7 @@ nsduh_2021_v1 <- nsduh_2021_raw %>%
 I used survey data asking respondents whether they had ever used a substance in their life. Fewer people have tried substances traditionally thought of as "harder drugs," like heroin and meth, than legal substances, like alcohol and cigarettes. In older age groups, there are wider gaps in exposure across the different substances. In addition, there are trends related to certain substances being more popular among certain age groups. Inhalants are more popular relative to other substances in younger age groups. In the 30 to 34 age group and those younger, marijuana is more likely to have been tried than cigarettes, but this trend is reversed in older age groups.
 
 ::: {.callout-note appearance="simple"}
-## Visualization Note
+## Note about Age Groups
 
 Please note that these age categories are not of equal size. These are the same age categories used in the NSDUH survey. The dashed lines connecting the points are meant to help illustrate trends across these age groups, but not to imply continuous age data.
 :::
@@ -271,8 +271,8 @@ ggplot(substance_ever, aes(x = age, y = Percentage, color = Substance, group = S
 
 This analysis uses the same survey questions as the previous section, though the responses are grouped by sex, which was recorded as a binary variable in the survey data. In most cases, the percentage of male participants who have experimented with these substances in greater than the percentage of female participants. This gender gap in lifetime substance use experience appears to be larger in older age groups.
 
-::: {.callout-note appearance="simple"}
-## Visualization Note
+::: {.callout-warning appearance="simple"}
+## Warning about Y-axis Scaling
 
 Please note that the scales on the y-axis are not identical across the faceted plots for the next two visualizations. Because some substances are used much more widely than other substances, I chose to adjust the y-axis' scale in order to highlight the use differences across sex.
 :::
@@ -434,11 +434,11 @@ As represented in the NSDUH survey data, substance use varies widely across age 
 
 ### Functions used
 
-**dyplr:** filter, select, summarise, mutate, group_by, ungroup, arrange
+**dyplr:** `filter`, `select`, `summarise`, `mutate`, `group_by`, `ungroup`, `arrange`
 
-**tidyr:** pivot_longer
+**tidyr:** `pivot_longer`
 
-**ggplot2:** geom_point, geom_path, geom_bar, geom_tile
+**ggplot2:** `geom_point`, `geom_path`, `geom_bar`, `geom_tile`
 
 ### References
 
