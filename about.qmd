@@ -2,6 +2,13 @@
 title: "About"
 ---
 
+::: {layout="[1,1]"}
+
+![](alaska5.png)
+
+![](alaska4.png)
+:::
+
 ## 🍉 Bio
 
 Hi! I'm a graduate student at Johns Hopkins Bloomberg School of Public Health and I'm studying epidemiology with a focus on pharmacoepidemiology. I'm excited for future opportunities to learn more about drug safety, utilization, and effectiveness.
@@ -33,3 +40,13 @@ BA in Sociology \| 2014 - 2018
 **Health Education Intern** \| Breathe DC \| Summer 2017
 
 **Community Health Intern** \| American Lung Association \| Summers 2015 & 2016
+
+## 📓 Publications
+
+[**Digitally Based Blood Pressure Self-Monitoring Program That Promotes Hypertension Self-Management and Health Education Among Patients With Low-Income: Usability Study**](https://pubmed.ncbi.nlm.nih.gov/37486745/)
+
+JMIR Human Factors \| Jul 24, 2023
+
+[**COVID-19 monoclonal antibody treatment impact on symptoms and post-COVID conditions among high-risk patients at a Federally Qualified Health Center**](https://pubmed.ncbi.nlm.nih.gov/36814187/)
+
+BMC Infectious Diseases \| Feb 22, 2023

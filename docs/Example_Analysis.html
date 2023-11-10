@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -151,11 +170,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#substances-ever-used-across-age" id="toc-substances-ever-used-across-age" class="nav-link" data-scroll-target="#substances-ever-used-across-age">Substances Ever Used Across Age</a></li>
   <li><a href="#substances-ever-used-across-sex" id="toc-substances-ever-used-across-sex" class="nav-link" data-scroll-target="#substances-ever-used-across-sex">Substances Ever Used across Sex</a></li>
   <li><a href="#recent-substance-use-across-age-and-sex" id="toc-recent-substance-use-across-age-and-sex" class="nav-link" data-scroll-target="#recent-substance-use-across-age-and-sex">Recent Substance Use Across Age and Sex</a></li>
-  <li><a href="#age-of-substance-use-initiation-across-substances" id="toc-age-of-substance-use-initiation-across-substances" class="nav-link" data-scroll-target="#age-of-substance-use-initiation-across-substances">Age of Substance Use Initiation across Substances</a></li>
+  <li><a href="#age-of-substance-use-initiation" id="toc-age-of-substance-use-initiation" class="nav-link" data-scroll-target="#age-of-substance-use-initiation">Age of Substance Use Initiation</a></li>
   </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
   <ul class="collapse">
   <li><a href="#functions-used" id="toc-functions-used" class="nav-link" data-scroll-target="#functions-used">Functions used</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -183,14 +203,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="drugs_illustration.png" class="img-fluid" width="500"></p>
 <section id="research-question" class="level1">
 <h1>Research Question</h1>
-<p><strong>How does recreational substance use vary across age and gender?</strong></p>
-<p>In this analysis, I am interested in exploring how substance use varies across age and gender in the United States. This analysis is intended for anyone interested in public health and trends related to these topics.</p>
+<p><strong>How does recreational substance use vary across age and sex?</strong></p>
+<p>A person’s relationship with substance use is dynamic and may change throughout their life. With this in mind, researchers are often interested in exploring how different groups of people use recreational drugs. Recently, there have been increased concerns about the interaction of substance use and mental health issues for youth<span class="citation" data-cites="panchal_recent_2022"><sup><a href="#ref-panchal_recent_2022" role="doc-biblioref">1</a></sup></span>. Other reports have described increased binge drinking and marijuana use among middle aged adults<span class="citation" data-cites="richtel_middle-aged_2023"><sup><a href="#ref-richtel_middle-aged_2023" role="doc-biblioref">2</a></sup></span> and substance use disorders among older adults<span class="citation" data-cites="span_substance_2023"><sup><a href="#ref-span_substance_2023" role="doc-biblioref">3</a></sup></span>. While men are more likely to use substances than women<span class="citation" data-cites="noauthor_sex_nodate"><sup><a href="#ref-noauthor_sex_nodate" role="doc-biblioref">4</a></sup></span>, stigmatization contributes to women being less likely to connect with substance use treatment resources<span class="citation" data-cites="krug_women_2023"><sup><a href="#ref-krug_women_2023" role="doc-biblioref">5</a></sup></span>. Overall, understanding how different groups of people interact with substances helps medical and public health professionals support these impacted groups.</p>
+<p>In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. This analysis is intended for anyone interested in public health and trends related to these topics.</p>
 </section>
 <section id="data-source" class="level1 page-columns page-full">
 <h1>Data Source</h1>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><img src="hhs-samhsa.jpg" class="img-fluid"> The Substance Abuse and Mental Health Services Administration (SAMHSA) administers the NSDUH. The agency focuses on behavioral health and was established by congress in 1992. As noted in the <a href="https://www.samhsa.gov/about-us/frequently-asked-questions">SAMHSA FAQ</a>, the agency’s top five priorities are:</p>
+<p><img src="hhs-samhsa.jpg" class="img-fluid"> The Substance Abuse and Mental Health Services Administration (SAMHSA) administers the NSDUH. The agency focuses on behavioral health and was established by congress in 1992. As noted in the SAMHSA’s Strategic Plan<span class="citation" data-cites="noauthor_samhsas_2023"><sup><a href="#ref-noauthor_samhsas_2023" role="doc-biblioref">6</a></sup></span>, the agency’s top five priorities are:</p>
 <ul>
 <li><p>Preventing Overdose</p></li>
 <li><p>Enhancing Access to Suicide Prevention and Crisis Care</p></li>
@@ -198,8 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Integrating Behavioral and Physical Health Care</p></li>
 <li><p>Strengthening the Behavioral Health Workforce</p></li>
 </ul>
-</div></div><p>I used data from the 2021 <a href="https://nsduhweb.rti.org/respweb/homepage.cfm">National Survey of Drug Use and Health</a>. The NSDUH has been conducted by the U.S. government since 1971.</p>
-<p>I used <a href="https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001">this link</a> to download the dataset and the codebook can be found <a href="https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf">here</a>.</p>
+</div></div><p>I used data from the 2021 <a href="https://nsduhweb.rti.org/respweb/homepage.cfm">National Survey of Drug Use and Health</a>. The NSDUH has been conducted by the U.S. government since 1971. This survey explores questions related to substance use, mental health, and other health concerns. I used <a href="https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001">this link</a> to download the dataset and the codebook can be found <a href="https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf">here</a>.</p>
 </section>
 <section id="data-wrangling" class="level1">
 <h1>Data Wrangling</h1>
@@ -387,8 +407,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Analysis and Results</h1>
 <section id="substances-ever-used-across-age" class="level2">
 <h2 class="anchored" data-anchor-id="substances-ever-used-across-age">Substances Ever Used Across Age</h2>
-<p><strong>Across different age groups, how does experience using different substances vary?</strong></p>
-<p>I used survey data related to questions “Have you ever used ___?“, which was a question for each of the substances I included. As we may expect, substances traditionally thought of as”harder drugs,” like heroin and meth, have fewer people who have tried them than legal substances like alcohol and cigarettes. In older age groups, there are wider gaps in exposure across the different substance. Perhaps in younger age groups, especially when none of these substances are legal to their age group, the respondents who are exposed to a substance are more likely to be experimenting with a variety of substances.</p>
+<p><strong>How does any lifetime drug use vary across age?</strong></p>
+<p>I used survey data asking respondents whether they had ever used a substance in their life. As we may expect, fewer people have tried substances traditionally thought of as “harder drugs,” like heroin and meth, than legal substances, like alcohol and cigarettes. In older age groups, there is a wider gaps in exposure across the different substances. Perhaps in younger age groups, especially when none of these substances are legal, the respondents who are using substances are less discriminatory about which substance they do use.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -421,8 +441,8 @@ Visualization Note
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(substance_ever, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> Percentage, <span class="at">color =</span> Substance, <span class="at">group =</span> Substance)) <span class="sc">+</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">linetype =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Proportion of Respondents by Age Group Who Have </span><span class="sc">\n</span><span class="st">Ever Tried Each Substance"</span>,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"FILL IN SUBTITLE"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percentage of Respondents Who Have Ever Tried Substance"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This visualization is colored by substance and compared across age group. In the NSDUH, age </span><span class="sc">\n</span><span class="st">is recorded as a categorical variables using a set of age groups, which vary in the amount of </span><span class="sc">\n</span><span class="st">years. The age group interval lengths are narrower in adolescence as compared to younger and </span><span class="sc">\n</span><span class="st">older years."</span>,</span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage of Respondents"</span>,</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span>) <span class="sc">+</span></span>
@@ -448,8 +468,8 @@ Visualization Note
 </section>
 <section id="substances-ever-used-across-sex" class="level2">
 <h2 class="anchored" data-anchor-id="substances-ever-used-across-sex">Substances Ever Used across Sex</h2>
-<p>This analysis uses the same survey data as the previous section, though the responses are grouped by sex, which was collected as a binary variable. In most cases, the percentage of male participants who have experimented with these substances in greater than the percentage of female participants. The difference in these percentages appears to be larger in older age groups.</p>
-<p><strong>How does exposure to different substances vary across sex and age?</strong></p>
+<p><strong>How does any lifetime drug use vary across sex and age?</strong></p>
+<p>This analysis uses the same survey data as the previous section, though the responses are grouped by sex, which was recorded as a binary variable in the survey data. In most cases, the percentage of male participants who have experimented with these substances in greater than the percentage of female participants. The difference in these percentages appears to be larger in older age groups.</p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -491,8 +511,8 @@ Visualization Note
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(substance_ever_sex, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> Percentage, <span class="at">color =</span> sex, <span class="at">group =</span> sex)) <span class="sc">+</span></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>() <span class="sc">+</span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percentage of Respondents Who Have Ever Tried Each Substance </span><span class="sc">\n</span><span class="st">Across Age Groups and Sex"</span>,</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"NEED TO FILL IN"</span>,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Percentage of Respondents Who Have Ever Tried Substance"</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This visualization is faceted by substance and color coded by sex. The y-axis scales are not </span><span class="sc">\n</span><span class="st">identical and are fit to reflect the scale most appropriate for that specific substance."</span>,</span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage of Respondents"</span>,</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Sex:"</span>,</span>
@@ -510,8 +530,8 @@ Visualization Note
 </section>
 <section id="recent-substance-use-across-age-and-sex" class="level2">
 <h2 class="anchored" data-anchor-id="recent-substance-use-across-age-and-sex">Recent Substance Use Across Age and Sex</h2>
-<p><strong>How does recent substance use vary across age and sex?</strong></p>
-<p>In this section, I used survey information about how recent the respondent has used a substance. While there were often more categories available, depending on the substance, I chose to define “recent use” as happening in the last 12 months and coded the responses to reflect a binary variable. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants.</p>
+<p><strong>How does recent drug use vary across age and sex?</strong></p>
+<p>In this section, I used survey data about how recent the respondent has used a substance. While there were often more categories available, depending on the substance, I chose to define “recent use” as happening in the last 12 months and coded the responses to reflect a binary variable. Similar to the responses related to any lifetime use in my earlier visualization, male respondents are overall more likely to use these substances than female participants.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -538,25 +558,26 @@ Visualization Note
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(proportion_lastyear, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> Percentage, <span class="at">fill =</span> sex, <span class="at">group =</span> sex)) <span class="sc">+</span></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Percentage of Respondents Who Used Substance in the Last 12 Months </span><span class="sc">\n</span><span class="st">Across Age Groups and Sex"</span>,</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Respondents"</span>,</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Sex:"</span>,</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span>) <span class="sc">+</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"purple"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"darkgreen"</span>)) <span class="sc">+</span> </span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">7</span>)) <span class="sc">+</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> substance_label, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Percentage of Respondents with Recent Substance Use"</span>,</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Recent substance use is defined as within the last 12 months. This visualization is faceted by </span><span class="sc">\n</span><span class="st">substance and color coded by sex. The y-axis scales are not identical and are fit to reflect the </span><span class="sc">\n</span><span class="st">scale most appropriate for that specific substance."</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age Group"</span>,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Respondents"</span>,</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Sex:"</span>,</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span>) <span class="sc">+</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"purple"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"darkgreen"</span>)) <span class="sc">+</span> </span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">7</span>)) <span class="sc">+</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> substance_label, <span class="at">scales =</span> <span class="st">"free_y"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="Example_Analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="age-of-substance-use-initiation-across-substances" class="level2">
-<h2 class="anchored" data-anchor-id="age-of-substance-use-initiation-across-substances">Age of Substance Use Initiation across Substances</h2>
-<p><strong>When do these people try a substance for the first time?</strong></p>
+<section id="age-of-substance-use-initiation" class="level2">
+<h2 class="anchored" data-anchor-id="age-of-substance-use-initiation">Age of Substance Use Initiation</h2>
+<p><strong>When are people most likely to try a drug for the first time?</strong></p>
 <p>To explore this question, I used survey data asking respondents about the age of their first use of a substance. While this data was numeric with integers for age, I chose to create age group categories instead. For nearly all of the substances, the age group 15-19 is the most common time when people use for the first time. In general, substances generally considered “harder drugs” are initiated at older ages than drugs that are legal for adults.</p>
 <div class="cell">
 <details>
@@ -612,10 +633,10 @@ Visualization Note
 <span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightblue"</span>, <span class="at">high =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
 <span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Percentage of Respondents to First Use Substance"</span>,</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Age When Respondents First Used Substance"</span>,</span>
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Substances are organized by median age of substance use initiation, </span><span class="sc">\n</span><span class="st">with greater median age at the top of the plot. Respondents are included </span><span class="sc">\n</span><span class="st">if they have ever used the substance."</span>,</span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age of Substance Use Initiation (years)"</span>,</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Substance"</span>,</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">""</span>,</span>
 <span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Percentage </span><span class="sc">\n</span><span class="st">of Respondents"</span>,</span>
 <span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: NSDUH 2021"</span></span>
 <span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
@@ -630,12 +651,35 @@ Visualization Note
 </section>
 <section id="summary" class="level1">
 <h1>Summary</h1>
-<p>Substance use varies widely across age and sex. Across the NSDUH age groups, substance use experience varies</p>
+<p>Substance use varies widely across age and sex. Across the NSDUH age groups, substance use experience varies widely. The types of drugs that respondents have ever used varies across age groups. In addition, there is a gender gap in the number of respondents who have ever used these substances. The number of people who have used a substance in the last 12 months also varies across age group and sex. In general, respondents were most likely to have first tried a substance in their later teenage years. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about statistical analyses and epidemiology so that I will become better equipped to continue exploring these questions and investigating these topics.</p>
 <section id="functions-used" class="level3">
 <h3 class="anchored" data-anchor-id="functions-used">Functions used</h3>
-<p><strong>dyplr:</strong> filter, select, summarise, mutate, group_by, ungroup</p>
+<p><strong>dyplr:</strong> filter, select, summarise, mutate, group_by, ungroup, arrange</p>
 <p><strong>tidyr:</strong> pivot_longer</p>
-<p><strong>ggplot2:</strong> geom_point, geom_path, geom_tile</p>
+<p><strong>ggplot2:</strong> geom_point, geom_path, geom_bar, geom_tile</p>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<div id="refs" class="references csl-bib-body" data-line-spacing="2" role="list">
+<div id="ref-panchal_recent_2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Panchal, N., Rudowitz, R. &amp; Cox, C. <a href="https://www.kff.org/mental-health/issue-brief/recent-trends-in-mental-health-and-substance-use-concerns-among-adolescents/">Recent <span>Trends</span> in <span>Mental</span> <span>Health</span> and <span>Substance</span> <span>Use</span> <span>Concerns</span> <span>Among</span> <span>Adolescents</span></a>. <em>Kaiser Family Foundation</em> (2022).</div>
+</div>
+<div id="ref-richtel_middle-aged_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Richtel, M. <a href="https://www.nytimes.com/2023/08/17/health/alcohol-binge-marijuana-drugs.html">Middle-<span>Aged</span> <span>Adults</span> <span>Are</span> <span>Binge</span> <span>Drinking</span> and <span>Using</span> <span>Marijuana</span> at <span>Record</span> <span>Levels</span> - <span>The</span> <span>New</span> <span>York</span> <span>Times</span></a>. <em>New York Times</em> (2023).</div>
+</div>
+<div id="ref-span_substance_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Span, P. <a href="https://www.nytimes.com/2023/07/09/health/seniors-substance-abuse.html">Substance <span>Abuse</span> <span>Is</span> <span>Climbing</span> <span>Among</span> <span>Seniors</span> - <span>The</span> <span>New</span> <span>York</span> <span>Times</span></a>. <em>New York Times</em> (2023).</div>
+</div>
+<div id="ref-noauthor_sex_nodate" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline"><a href="https://nida.nih.gov/publications/research-reports/substance-use-in-women/sex-gender-differences-in-substance-use">Sex and <span>Gender</span> <span>Differences</span> in <span>Substance</span> <span>Use</span> <span></span> <span>National</span> <span>Institute</span> on <span>Drug</span> <span>Abuse</span> (<span>NIDA</span>)</a>. <em>National Institute on Drug Abuse</em>.</div>
+</div>
+<div id="ref-krug_women_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Krug, M. <em>Women less likely to seek substance use treatment due to stigma, logistics <span></span> <span>Penn</span> <span>State</span> <span>University</span></em>. <a href="https://www.psu.edu/news/social-science-research-institute/story/women-less-likely-seek-substance-use-treatment-due-stigma/">https://www.psu.edu/news/social-science-research-institute/story/women-less-likely-seek-substance-use-treatment-due-stigma/</a> (2023).</div>
+</div>
+<div id="ref-noauthor_samhsas_2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline"><a href="https://www.samhsa.gov/about-us/strategic-plan"><span>SAMHSA</span>’s 2023-2026 <span>Strategic</span> <span>Plan</span></a>. (2023).</div>
+</div>
+</div>
 
 
 </section>
