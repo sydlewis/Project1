@@ -245,7 +245,7 @@ ggplot(substance_ever, aes(x = age, y = Percentage, color = Substance, group = S
   geom_point(size = 2.5) +
   geom_path(linetype = 2) +
   labs(title = "Percentage of Respondents Who Have Ever Tried Substance",
-       subtitle = "This visualization is colored coded by substance and compared across age group. In the NSDUH, age \nis recorded as a categorical variables using a set of age groups, which vary in the amount of \nyears included. The age group interval lengths are narrower in adolescence as compared to younger \nand older years.",
+       subtitle = "This visualization is color coded by substance and compared across age group. In the NSDUH, age \nis recorded as a categorical variables using a set of age groups, which vary in the amount of \nyears included. The age group interval lengths are narrower in adolescence as compared to younger \nand older years.",
        x = "Age Group",
        y = "Percentage of Respondents",
        caption = "Source: NSDUH 2021") +
