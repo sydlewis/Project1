@@ -1,0 +1,19 @@
+---
+title: "Sydney Lewis"
+---
+
+![](sydlewis.jpeg){width="200"}
+
+Hi! I'm a graduate student at Johns Hopkins Bloomberg School of Public Health. I'm studying epidemiology with a focus on pharmacoepidemiology. I'm excited for future opportunities to learn how to use data science skills to improve public health.
+
+Connect with me:
+
+<ul>
+
+<li><a href="https://www.linkedin.com/in/sydneyvlewis/"><i class="fas fa-linkedin" style="color: mediumvioletred;"></i> LinkedIn</a></li>
+
+<li><a href="https://github.com/sydlewis"><i class="fas fa-github" style="color: mediumvioletred;"></i> Github</a></li>
+
+<li><a href="mailto:slewi100@jh.edu"><i class="fas fa-envelope" style="color: mediumvioletred;"></i> Email</a></li>
+
+</ul>

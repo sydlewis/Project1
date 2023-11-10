@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "Sydney Lewis"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - Example_Analysis.qmd
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+    theme: pulse
+    css: styles.css
+    toc: true
+
+editor: visual
+
