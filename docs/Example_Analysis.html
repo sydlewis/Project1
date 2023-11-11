@@ -205,7 +205,7 @@ div.csl-indent {
 <h1>Research Question</h1>
 <p><strong>How does recreational substance use vary across age and sex?</strong></p>
 <p>A person’s relationship with substance use is dynamic and may change throughout their life. Researchers are often interested in exploring how different groups of people use recreational drugs. Recently, there have been increased concerns about the interaction of substance use and mental health issues for youth<span class="citation" data-cites="panchal_recent_2022"><sup><a href="#ref-panchal_recent_2022" role="doc-biblioref">1</a></sup></span>. Other reports have described increased binge drinking and marijuana use among middle aged adults<span class="citation" data-cites="richtel_middle-aged_2023"><sup><a href="#ref-richtel_middle-aged_2023" role="doc-biblioref">2</a></sup></span> and substance use disorders among older adults<span class="citation" data-cites="span_substance_2023"><sup><a href="#ref-span_substance_2023" role="doc-biblioref">3</a></sup></span>. While men are more likely to use substances than women<span class="citation" data-cites="noauthor_sex_2022"><sup><a href="#ref-noauthor_sex_2022" role="doc-biblioref">4</a></sup></span>, stigmatization contributes to women being less likely to connect with substance use treatment resources<span class="citation" data-cites="krug_women_2023"><sup><a href="#ref-krug_women_2023" role="doc-biblioref">5</a></sup></span>. Overall, understanding how different groups of people interact with recreational drugs helps medical and public health professionals better support these impacted groups.</p>
-<p>In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. This analysis is intended for anyone interested in public health and trends related to these important topics.</p>
+<p>In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. The intended audience of this analysis is anyone interested in public health and in trends related to substance use.</p>
 </section>
 <section id="data-source" class="level1 page-columns page-full">
 <h1>Data Source</h1>
@@ -219,7 +219,7 @@ div.csl-indent {
 <li><p>Integrating Behavioral and Physical Health Care</p></li>
 <li><p>Strengthening the Behavioral Health Workforce</p></li>
 </ul>
-</div></div><p>I used data from the 2021 <a href="https://nsduhweb.rti.org/respweb/homepage.cfm">National Survey of Drug Use and Health</a> (NSDUH). The NSDUH has been conducted by the U.S. government since 1971. This survey explores questions related to substance use, mental health, and other health concerns. I downloaded the data via <a href="https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001">this link</a>. The associated codebook can be found <a href="https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf">here</a>.</p>
+</div></div><p>I used data from the 2021 <a href="https://nsduhweb.rti.org/respweb/homepage.cfm">National Survey of Drug Use and Health</a> (NSDUH). The NSDUH has been conducted by the U.S. government since 1971. This survey explores questions related to substance use, mental health, and other health concerns. I downloaded the data via <a href="https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001">this link</a>. The associated data dictionary can be found <a href="https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf">here</a>.</p>
 </section>
 <section id="data-wrangling" class="level1">
 <h1>Data Wrangling</h1>
@@ -654,9 +654,9 @@ Warning about Y-axis Scaling
 <p>As represented in the NSDUH survey data, substance use varies widely across age and sex. There are gender and age gaps in the number of respondents who have ever used and recently used these substances. Some of these trends are unique to specific substances. In general, respondents were most likely to have first tried a substance in their later teenage years. One possible limitation of this analysis is the use of survey data, which relies on self-reported substance use. This analysis is only the tip of the iceberg in exploring demographic differences in substance use. I am so excited to continue learning about epidemiology and statistical analyses so that I will become better equipped to continue exploring these research questions.</p>
 <section id="functions-used" class="level3">
 <h3 class="anchored" data-anchor-id="functions-used">Functions used</h3>
-<p><strong>dyplr:</strong> <code>filter</code>, <code>select</code>, <code>summarise</code>, <code>mutate</code>, <code>group_by</code>, <code>ungroup</code>, <code>arrange</code></p>
+<p><strong>dyplr:</strong> <code>filter</code>, <code>select</code>, <code>summarise</code>, <code>mutate</code>, <code>group_by</code>, <code>ungroup</code>, <code>arrange</code>, <code>case_when</code></p>
 <p><strong>tidyr:</strong> <code>pivot_longer</code></p>
-<p><strong>ggplot2:</strong> <code>geom_point</code>, <code>geom_path</code>, <code>geom_bar</code>, <code>geom_tile</code></p>
+<p><strong>ggplot2:</strong> <code>geom_point</code>, <code>geom_path</code>, <code>geom_bar</code>, <code>geom_tile</code>, <code>geom_text</code></p>
 </section>
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>

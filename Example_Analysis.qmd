@@ -12,7 +12,7 @@ csl: nature.csl
 
 A person's relationship with substance use is dynamic and may change throughout their life. Researchers are often interested in exploring how different groups of people use recreational drugs. Recently, there have been increased concerns about the interaction of substance use and mental health issues for youth[@panchal_recent_2022]. Other reports have described increased binge drinking and marijuana use among middle aged adults[@richtel_middle-aged_2023] and substance use disorders among older adults[@span_substance_2023]. While men are more likely to use substances than women[@noauthor_sex_2022], stigmatization contributes to women being less likely to connect with substance use treatment resources[@krug_women_2023]. Overall, understanding how different groups of people interact with recreational drugs helps medical and public health professionals better support these impacted groups.
 
-In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. This analysis is intended for anyone interested in public health and trends related to these important topics.
+In this analysis, I am interested in further exploring how substance use varies across age and sex in the United States. To do so, I will be using survey data from the National Survey on Drug Use and Health. The intended audience of this analysis is anyone interested in public health and in trends related to substance use.
 
 # Data Source
 
@@ -30,7 +30,7 @@ In this analysis, I am interested in further exploring how substance use varies 
 -   Strengthening the Behavioral Health Workforce
 :::
 
-I used data from the 2021 [National Survey of Drug Use and Health](https://nsduhweb.rti.org/respweb/homepage.cfm) (NSDUH). The NSDUH has been conducted by the U.S. government since 1971. This survey explores questions related to substance use, mental health, and other health concerns. I downloaded the data via [this link](https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001). The associated codebook can be found [here](https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf).
+I used data from the 2021 [National Survey of Drug Use and Health](https://nsduhweb.rti.org/respweb/homepage.cfm) (NSDUH). The NSDUH has been conducted by the U.S. government since 1971. This survey explores questions related to substance use, mental health, and other health concerns. I downloaded the data via [this link](https://www.datafiles.samhsa.gov/dataset/national-survey-drug-use-and-health-2021-nsduh-2021-ds0001). The associated data dictionary can be found [here](https://www.datafiles.samhsa.gov/sites/default/files/field-uploads-protected/studies/NSDUH-2021/NSDUH-2021-datasets/NSDUH-2021-DS0001/NSDUH-2021-DS0001-info/2021NSDUHmrbCAISpecs011321.pdf).
 
 # Data Wrangling
 
@@ -434,11 +434,11 @@ As represented in the NSDUH survey data, substance use varies widely across age 
 
 ### Functions used
 
-**dyplr:** `filter`, `select`, `summarise`, `mutate`, `group_by`, `ungroup`, `arrange`
+**dyplr:** `filter`, `select`, `summarise`, `mutate`, `group_by`, `ungroup`, `arrange`, `case_when`
 
 **tidyr:** `pivot_longer`
 
-**ggplot2:** `geom_point`, `geom_path`, `geom_bar`, `geom_tile`
+**ggplot2:** `geom_point`, `geom_path`, `geom_bar`, `geom_tile`, `geom_text`
 
 ### References
 
